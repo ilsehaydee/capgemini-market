@@ -38,6 +38,7 @@ public class AuthController {
 
             return new ResponseEntity<>(new AuthenticationResponse(jwt), HttpStatus.OK);
         } catch (BadCredentialsException e) {
+           e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
 
